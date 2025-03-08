@@ -21,9 +21,18 @@
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
 	}
+	
+ /*Estilo animação*/
+	#to-animate {
+		max-width: 10em;
+		display: inline-block;
+		animation: fadeIn 1s ease-in-out;
+	}
 
 	body {
 		line-height: 1;
+		background-color: #a2e0d6;
+		color: #d366e9;
 	}
 
 	ol, ul {
