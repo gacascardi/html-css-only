@@ -26,6 +26,13 @@
 		line-height: 1;
 	}
 
+	 /*Estilo animação*/
+	 #to-animate {
+		max-width: 10em;
+		display: inline-block;
+		animation: fadeIn 1s ease-in-out;
+	}
+
 	ol, ul {
 		list-style: none;
 	}
