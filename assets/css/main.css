@@ -111,7 +111,7 @@ body {
 body, input, select, textarea {
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
 	font-size: 17pt;
-		font-weight: 400;
+		font-weight: 200;
 	line-height: 1.65;
 	}
 
@@ -761,7 +761,8 @@ body, input, select, textarea {
 		}
 
 		.image.left, .image.right {
-			max-width: 100%;
+			right: auto;
+			max-width: 180%;
 		}
 
 			.image.left img, .image.right img {
@@ -1247,24 +1248,28 @@ body, input, select, textarea {
 /* Wrapper */
 
 	#wrapper {
-		width: 64em;
+		width: 64;
+		left: auto;
+		right: auto;
+		top: 0;
 		margin: 0 auto;
 		max-width: calc(100% - 4em);
 		padding: 4em 0 2em 0;
 	}
 
 		#wrapper > .main {
-			margin-bottom: 4em;
+			margin-bottom: 2em;
 		}
 
 		@media screen and (max-width: 980px) {
 
 			#wrapper {
+				padding: auto;
 				padding: 2em 0 2em 0;
 			}
 
 				#wrapper > .main {
-					margin-bottom: 2em;
+					margin-bottom: 2px;
 				}
 
 		}
@@ -1273,11 +1278,15 @@ body, input, select, textarea {
 
 			#wrapper {
 				max-width: calc(100% - 2em);
-				padding: 1em 0 0.1em 0;
+				padding: 2em 0 2em 0;
+				padding: 1em 0 0em 0;
+				left: 10px;
+				right: 10px;
+				top: 9;
 			}
 
 				#wrapper > .main {
-					margin-bottom: 1em;
+					margin-bottom: 10em;
 				}
 
 		}
@@ -1314,7 +1323,7 @@ body, input, select, textarea {
 	}
 
 		#header input, #header select, #header textarea {
-			color: #d3a1a1;
+			color: #e74242;
 		}
 
 		#header a {
@@ -1359,7 +1368,7 @@ body, input, select, textarea {
 		}
 
 		#header h1 {
-			margin-bottom: 1.5em;
+			margin-bottom: 10em;
 		}
 
 		#header .inner {
@@ -1368,7 +1377,7 @@ body, input, select, textarea {
 		}
 
 		#header.alt {
-			height: 50em;
+			height: 50px;
 			min-height: 50em;
 			min-height: 75vh;
 		}
@@ -1433,8 +1442,8 @@ body, input, select, textarea {
 			}
 
 				#header.alt h1 {
-					font-size: 2.5em;
-					padding-left: 7em 5em 25em 5em;
+					font-size: 8.5em;
+					padding-left: 70px 5em 25em 5em;
 					padding-right: 0;
 				}
 
@@ -1452,9 +1461,10 @@ body, input, select, textarea {
 /* Main */
 
 	#main {
-		padding: 4em 4em 7em 40em;
+		margin-top: 1px;
+		padding: 0;
 		background-color: #43da8e;
-		border-radius: -8px;
+		border-radius: 8px;
 	}
 
 		#main > header:first-child {
@@ -1480,21 +1490,24 @@ body, input, select, textarea {
 /* Intro DIAMANTE*/
 
 	#intro {
-		margin-top: 0;
-		padding: 2em 2em 2em 2em;
+		margin-top: 1em;
+		padding: 1em;
 		background-color: #f196ed;
 		border-radius: 10px;		
 		text-align: center;
-		font-size: 11px;
-		bottom: 100%;
-		
-		
+		font-size: 10px;
+		position: relative;
+		bottom: 10px; /* Adjusted to move the container further up */
+		left: 50%;
+		top: 10%;
+		transform: translateX(-50%);
 	}
 
 		@media screen and (max-width: 716px) {
 
 			#intro {
-				padding: 1em 2em 1em 1em;
+				padding: 0;
+				bottom: 10px; /* Adjusted for smaller screens */
 			}
 
 		}
@@ -1502,7 +1515,8 @@ body, input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			#intro {
-				padding: 2em 2em 0.1em 1em;
+				padding: 0;
+				bottom: 0px; /* Adjusted for even smaller screens */
 			}
 
 				#intro p br {
@@ -1516,6 +1530,7 @@ body, input, select, textarea {
 	#cta {
 		padding: 2em 0 0.1em 0;
 		text-align: center;
+		font-size: 14px;
 	}
 
 		@media screen and (max-width: 736px) {
@@ -1595,16 +1610,19 @@ body, input, select, textarea {
 		}
 		
 		.menu-container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 			gap: 20px;
-			padding: 20px;
+			padding: 1px;
+			margin-top: 0;
 		}
-		
+		/*quadros*/
 		.menu-card {
-			width: 300px;
-			background-color: #fff;
+			margin-top: 1;
+			width: 100%;
+			max-width: 300px;
+			left: auto;
+			background-color: #ebb0e3;
 			border-radius: 10px;
 			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 			overflow: hidden;
@@ -1615,41 +1633,52 @@ body, input, select, textarea {
 			transform: translateY(-5px);
 		}
 		
-		.menu-card img {
+		.menu-card img, 
+		.menu-card video {
 			width: 100%;
-			height: 200px;
+			height: 300px;
 			object-fit: cover;
 			border-radius: 10px 10px 0 0;
 		}
+		
 		
 		.menu-content {
 			padding: 20px;
 		}
 		
 		.menu-content h2 {
-			font-size: 24px;
+			font-size: 19px;
+			font-weight: 500;
 			margin-bottom: 10px;
-			color: #e27d60;
-		}
+			color: #5f0f69;
+			text-align: center;
+			}
 		
 		.menu-content p {
 			font-size: 14px;
 			color: #7f7f7f;
 			margin-bottom: 20px;
 		}
-		
+		/*botão itens*/
 		.menu-content a {
 			display: inline-block;
-			padding: 8px 16px;
-			background-color: #e27d60;
-			color: #fff;
+			margin-top: 10px;
+			padding: 1px 1px;
+			background-color: #6074e2;
+			color: #ffffff;
 			text-decoration: none;
 			border-radius: 4px;
+			text-align: center;
 			transition: background-color 0.3s;
 		}
 		
 		.menu-content a:hover {
 			background-color: #bf6043;
+		}
+		
+		.menu-content a:active {
+			background-color: #443da0;
+			
 		}
 		
 		
