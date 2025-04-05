@@ -1519,6 +1519,17 @@ body, input, select, textarea {
 		transform: translateX(-50%);
 	}
 
+	#intro video {
+		margin: 20px 80px; /* Adds spacing above and below each video */
+		width: auto; /* Ensures videos take up full width of the container */
+		height: auto;	
+		max-width: 410px; /* Sets a maximum width for videos */
+		max-height: 400px; /* Sets a maximum height for videos */
+		border-radius: 7px; /* Adds rounded corners to videos */
+		box-shadow: 0 8px 14px rgba(97, 14, 100, 0.753); /* Adds a subtle shadow for better visibility */
+	}
+	
+
 		@media screen and (max-width: 716px) {
 
 			#intro {
