@@ -2,27 +2,20 @@
 name: Deploy static content to Pages
 
 on:
-  # Executa em push para o branch padrão
   push:
     branches: ["master"]
-
-  # Permite executar este fluxo de trabalho manualmente na aba Actions
   workflow_dispatch:
 
-# Define permissões do GITHUB_TOKEN para permitir a implantação no GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Permite apenas uma implantação concorrente, ignorando execuções enfileiradas entre a execução em andamento e a última enfileirada.
-# No entanto, NÃO cancela execuções em andamento para permitir que essas implantações de produção sejam concluídas.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Trabalho único para implantação
   deploy:
     environment:
       name: github-pages
@@ -33,11 +26,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Build Project
+        run: |
+          npm install
+          npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Faz upload de todo o repositório
-          path: '.'
+          # Ajuste o caminho para o diretório correto
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
