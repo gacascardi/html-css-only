@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:200,400");
 
 /*
-	Epilogue by TEMPLATED
+	Epílogo por TEMPLATED
 	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+	Lançado gratuitamente sob a licença Creative Commons Attribution 3.0 (templated.co/license)
 */
 
 /* Reset */
@@ -78,7 +78,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 		-ms-overflow-style: scrollbar;
 	}
 
-	@media screen and (max-width: 1280px) {
+	@media screen and (max-width: 728px) {
 
 		html, body {
 			min-width: 520px;
@@ -270,7 +270,7 @@ body, input, select, textarea {
 	}
 
 		hr.major {
-			margin: 3em 0 2em 0;
+			margin: 3em 0 3em 0;
 		}
 
 	.align-left {
@@ -781,8 +781,7 @@ body, input, select, textarea {
 		}
 
 		.image.left, .image.right {
-			right: auto;
-			max-width: 180%;
+			right: 100%;
 		}
 
 			.image.left img, .image.right img {
@@ -1270,7 +1269,7 @@ body, input, select, textarea {
 /* Wrapper */
 
 	#wrapper {
-		width: 64;
+		width: 64em;
 		left: auto;
 		right: auto;
 		top: 0;
@@ -1287,11 +1286,10 @@ body, input, select, textarea {
 
 			#wrapper {
 				padding: auto;
-				padding: 2em 0 2em 0;
 			}
 
 				#wrapper > .main {
-					margin-bottom: 7px;
+					margin-bottom: 2em;
 				}
 
 		}
@@ -1399,7 +1397,7 @@ body, input, select, textarea {
 		}
 
 		#header.alt {
-			height: 5px;
+			height: 50em;
 			min-height: 50em;
 			min-height: 75vh;
 		}
@@ -1464,8 +1462,8 @@ body, input, select, textarea {
 			}
 
 				#header.alt h1 {
-					font-size: 8.5em;
-					padding-left: 70px 5em 25em 5em;
+					font-size: 2.5em;
+					padding-left: 7em 5em 25em 5em;
 					padding-right: 0;
 				}
 
@@ -1483,10 +1481,9 @@ body, input, select, textarea {
 /* Main */
 
 	#main {
-		margin-top: 1px;
-		padding: 0;
+		padding: 4em 2em 2em 2em;
 		background-color: #da5543;
-		border-radius: 8px;
+		border-radius: -8px;
 		border: solid 1px #3d083b;
 	}
 
@@ -1514,7 +1511,7 @@ body, input, select, textarea {
 
 	#intro {
 		margin-top: 1em;
-		padding: 1em;
+		padding: 2em 2em 2em 2em;
 		background-color: #f196ed;
 		border-radius: 10px;		
 		text-align: center;
@@ -1527,21 +1524,21 @@ body, input, select, textarea {
 	}
 
 	#intro video {
-		margin: 20px 80px; /* Adds spacing above and below each video */
-		width: auto; /* Ensures videos take up full width of the container */
+		margin: 20px 80px; /* Adiciona espaçamento acima e abaixo de cada vídeo */
+		width: auto; /* Garante que os vídeos ocupem a largura total do recipiente */
 		height: auto;	
 		max-width: 410px; /* Sets a maximum width for videos */
 		max-height: 400px; /* Sets a maximum height for videos */
-		border-radius: 7px; /* Adds rounded corners to videos */
+		border-radius: 7px; /* Adiciona cantos arredondados aos vídeos */
 		box-shadow: 0 8px 14px rgba(97, 14, 100, 0.753); /* Adds a subtle shadow for better visibility */
 	}
 	
 
-		@media screen and (max-width: 716px) {
+		@media screen and (max-width: 728px) {
 
 			#intro {
 				padding: 0;
-				bottom: 10px; /* Adjusted for smaller screens */
+				bottom: 10px; /* Ajustado para ecrãs mais pequenos*/
 				border: #420949 solid 1px;
 				border-radius: 4px;
 			}

@@ -28,5 +28,5 @@ function convertValue() {
     document.getElementById("outputHex").textContent = decimalValueInt.toString(16).toUpperCase() + convertDecimalToBase(decimalValueDec, 16);
 }
 
-// 初始转换
+// by Grazz
 convertValue();

@@ -25,54 +25,51 @@
 						<span class="icon fa-diamond major"></span>
 						<h2>Aproveitando o doce da vida.</h2>
 						
-						<a href="#cta"></a>
-							<video width="350px" height="350px" muted loop>
+							<video width="400px" height="340px" muted loop autoplay>
 								<source src="assets/css/videos/video-cinco.mp4" type="video/mp4">
 							</video>						
 
-							<a href="#cta"></a>
-							<video width="350px" height="350px"  muted loop>
-								<source src="assets/css/videos/video-seis.mp4" type="video/mp4">
+							<video width="400px" height="340px" muted loop autoplay>
+								<source src="assets/css/videos/video-sete.mp4" type="video/mp4">
 							</video>
-							
-						</a>
+						
 					</section>
 					<div id="wrapper">
 
 				<!-- Items -->
 <div class="menu-container">
 			<div class="menu-card">
-			<video width="320px" height="240px" muted>
+			<video width="320px" height="240px" muted autoplay loop>
 				<source src="assets/css/videos/video-pascoa.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>
       <div class="menu-content">
         <h2>Ovos Gourmet</h2>
         <p>Ovos de colher, Trufado, Mini Ovos para deixar sua Páscoa mais doce.</p>
-        <a href="#cta">Saber Mais</a>
+        <a href="#cta">Eu Quero!</a>
       </div>
     </div>
 		<div class="menu-card">
-			<video width="320" height="240" muted>
+			<video width="320" height="240" muted autoplay loop>
 				<source src="assets/css/videos/video-um.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>      
 			<div class="menu-content">
         <h2>Docinhos</h2>
         <p>Sua festa com o sabor que você escolher, da forma que quiser.</p>
-        <a href="#">Saber Mais</a>
+        <a href="#cta">Eu Quero!</a>
       </div>
     </div>
 
     <div class="menu-card">
-			<video width="320" height="240" muted>
+			<video width="320" height="240" muted autoplay loop>
 				<source src="assets/css/videos/video-tres.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>      
 			<div class="menu-content">
         <h2>Bolos</h2>
         <p>Personalizados do seu jeito, com a sua cara e com os mais variados sabores.</p>
-        <a href="#cta">Saber Mais</a>
+        <a href="#cta">Eu Quero!</a>
       </div>
     </div>
   </div>
@@ -225,15 +222,6 @@ Para parar o carrossel é com hover do mouse.-->
 					</footer>
 			</div>
 			<script>
-				// Play video on mouseover
-				document.querySelectorAll('video').forEach(video => {
-					video.addEventListener('mouseover', () => {
-						video.play();
-					});
-					video.addEventListener('mouseout', () => {
-						video.pause();
-					});
-				});
 
 				// Animation code
 				let animation = bodymovin.loadAnimation({
@@ -241,7 +229,7 @@ Para parar o carrossel é com hover do mouse.-->
 					renderer: 'svg',
 					loop: true,
 					autoplay: true,
-					path: 'assets/my-animation.json'
+					path: './assets/js/my-animation.json' // Corrected path
 				});
 			</script>
 	</body>
