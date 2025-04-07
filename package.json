@@ -1,0 +1,14 @@
+{
+  "name": "mimos-da-dany",
+  "version": "1.0.0",
+  "description": "Projeto Mimos da Dany",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Build script executado!'",
+    "start": "node index.js"
+  },
+  "author": "GrazzArte",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}
