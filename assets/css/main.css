@@ -1383,6 +1383,7 @@ body, input, select, textarea {
 			left: 0;
 			width: 100%;
 			height: 100%;
+			max-width: 40px;
 			background-color: rgba(0, 0, 0, 0);
 			background-image: url("images/overlay.png");
 		}
@@ -1736,3 +1737,128 @@ body, input, select, textarea {
 			
 		}
 
+/* Ajustes gerais para dispositivos móveis */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Ajustar vídeos para serem responsivos */
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajustar o layout do menu para dispositivos móveis */
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Ajustar os cartões do menu */
+.menu-card {
+  max-width: 100%;
+}
+
+/* Ajustar o texto e botões */
+.menu-content h2 {
+  font-size: 1.2rem;
+}
+
+.menu-content p {
+  font-size: 0.9rem;
+}
+
+.menu-content a {
+  font-size: 0.8rem;
+  padding: 8px 12px;
+}
+
+/* Ajustar o carrossel */
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+}
+
+/* Ajustar o cabeçalho */
+#header {
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Ajustar o CTA */
+#cta {
+  padding: 20px;
+  font-size: 1rem;
+}
+
+#cta a {
+  font-size: 1.2rem;
+}
+
+/* Ajustar o rodapé */
+#footer {
+  font-size: 0.9rem;
+  padding: 10px;
+}
+
+/* Media Queries para telas menores */
+@media screen and (max-width: 768px) {
+  #intro {
+    padding: 10px;
+    bottom: 0;
+  }
+
+  .menu-container {
+    grid-template-columns: 1fr; /* Apenas uma coluna em telas menores */
+  }
+
+  .menu-content h2 {
+    font-size: 1rem;
+  }
+
+  .menu-content p {
+    font-size: 0.8rem;
+  }
+
+  #cta {
+    font-size: 0.9rem;
+  }
+
+  #cta a {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #header h1 {
+    font-size: 1.5rem;
+  }
+
+  #header h2 {
+    font-size: 1.2rem;
+  }
+
+  .menu-content h2 {
+    font-size: 0.9rem;
+  }
+
+  .menu-content p {
+    font-size: 0.7rem;
+  }
+
+  #cta {
+    font-size: 0.8rem;
+  }
+
+  #cta a {
+    font-size: 0.9rem;
+  }
+
+  #footer {
+    font-size: 0.8rem;
+  }
+}
