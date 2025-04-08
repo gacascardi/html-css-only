@@ -1776,11 +1776,7 @@ video {
   padding: 8px 12px;
 }
 
-/* Ajustar o carrossel */
-.carousel-inner img {
-  width: 100%;
-  height: auto;
-}
+
 
 /* Ajustar o cabeçalho */
 #header {
