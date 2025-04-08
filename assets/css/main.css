@@ -1383,13 +1383,13 @@ body, input, select, textarea {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			max-width: 40px;
+			max-width: 410px;
 			background-color: rgba(0, 0, 0, 0);
 			background-image: url("images/overlay.png");
 		}
 
 		#header h1 {
-			margin-bottom: 10em;
+			margin-bottom: 150em;
 		}
 
 		#header .inner {
@@ -1776,7 +1776,11 @@ video {
   padding: 8px 12px;
 }
 
-
+/* Ajustar o carrossel */
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+}
 
 /* Ajustar o cabeçalho */
 #header {
