@@ -33,7 +33,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 	 /*Estilo animação*/
 	 #to-animate {
-		max-width: 10em;
+		max-width: 100%;
 		display: inline-block;
 		animation: fadeIn 1s ease-in-out;
 	}
@@ -55,19 +55,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 		border-collapse: collapse;
 		border-spacing: 0;
 	}
-
-	body {
-		-webkit-text-size-adjust: none;
-	}
-
-/* Box Model */
-
-	*, *:before, *:after {
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-
+	
 /* Basic */
 
 	@-ms-viewport {
@@ -78,16 +66,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 		-ms-overflow-style: scrollbar;
 	}
 
-	@media screen and (max-width: 1280px) {
-
-		html, body {
-			min-width: 520px;
+		/* Scrollbar */
+		::-webkit-scrollbar {
+			width: 0.5em;
+			height: 0.5em;
 		}
 
-	}
+			::-webkit-scrollbar-thumb {
+				background-color: #0b115e;
+				border-radius: 0.25em;
+			}
 
+			::-webkit-scrollbar-track {
+				background-color: #f72ab2;
+			}
 	body {
 		background: #e662df;
+		border: none;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -108,42 +103,29 @@ html {
 }
 
 body {
-	background-color: #f3bdf3;
+	background-color: #f360f3;
 	color: #1a1818e8;
+	margin: 0;
+	padding: 0;
+	border: none
 }
 
 body, input, select, textarea {
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
-	font-size: 17pt;
-		font-weight: 200;
-	line-height: 1.65;
-	}
-	
-		@media screen and (max-width: 1680px) {
-
-			body, input, select, textarea {
-				font-size: 13pt;
-			}
-
+	font-size: 12pt;
+	font-weight: 200;
+	line-height: 1.25;
+}
+		input, select, textarea {
+			font-size: 0.9em;
+			font-weight: 400;
+			line-height: 1.2em;
+			text-align: left;
+			text-decoration: none;
+			text-transform: none;
 		}
 
-		@media screen and (max-width: 880px) {
-
-			body, input, select, textarea {
-				font-size: 10pt;
-			}
-
-		}
-
-		@media screen and (max-width: 860px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
-
-	a {
+a {
 		-moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
@@ -166,19 +148,21 @@ body, input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
+		font-size: inherit;
 	}
 
-	h1, h2, h6 {
+	h1, h6 {
 		font-weight: 400;
 		line-height: 1 ;
-		margin: 4em 20em 1em 20em;
+		margin: 4em 2em 1em 20em;
 		text-transform: uppercase;
 		letter-spacing: 0;
 		justify-content: center;
 		align-items: center;
+		font-size-adjust: 100%;
 	}
 
-		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+		h1 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
 			text-decoration: none;
 		}
@@ -188,7 +172,7 @@ body, input, select, textarea {
 	}
 
 	h2 {
-		font-size: 2.75em;
+		font-size: 1.75em;
 		font-weight: 500;
 	}
 
@@ -201,35 +185,16 @@ body, input, select, textarea {
 	}
 
 	h5 {
-		font-size: 2.9em;
+		font-size: 2.0em;
+		font-weight: normal;
+		font-size-adjust: 50%;
+		margin:0
 	}
 
 	h6 {
-		font-size: 0.7em;
-	}
+		font-size: 0.7em;}
 
-	@media screen and (max-width: 736px) {
-
-		h1 {
-			font-size: 1.5em;
-		}
-
-		h2 {
-			font-size: 1.25em;
-		}
-
-		h3 {
-			font-size: 1em;
-		}
-
-	}
-
-	sub {
-		font-size: 0.8em;
-		position: relative;
-		top: 0.5em;
-	}
-
+	
 	sup {
 		font-size: 0.8em;
 		position: relative;
@@ -240,7 +205,7 @@ body, input, select, textarea {
 		border-left: solid 4px;
 		font-style: italic;
 		margin: 0 0 2em 0;
-		padding: 0.5em 0 0.5em 2em;
+		padding: 5em 0 0.5em 2em;
 	}
 
 	code {
@@ -248,7 +213,7 @@ body, input, select, textarea {
 		border: solid 1px;
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
-		margin: 0 0.25em;
+		margin: 0 0.5em;
 		padding: 0.25em 0.65em;
 	}
 
@@ -273,27 +238,16 @@ body, input, select, textarea {
 	}
 
 		hr.major {
-			margin: 3em 0 3em 0;
+			margin: 30em 0 3em 0;
 		}
 
-	.align-left {
-		text-align: left;
-	}
-
-	.align-center {
-		text-align: center;
-	}
-
-	.align-right {
-		text-align: right;
-	}
-
-	input, select, textarea {
+		input, select, textarea {
 		color: #181717;
 	}
 
 	a {
 		color: inherit;
+		font-size-adjust: 100%;
 	}
 
 		a:hover {
@@ -314,7 +268,7 @@ body, input, select, textarea {
 
 	code {
 		background: rgba(144, 144, 144, 0.075);
-		border-color: #83286c;
+		border-color: #f58bda;
 	}
 
 	hr {
@@ -328,6 +282,7 @@ body, input, select, textarea {
 		border: solid 1px;
 		margin-bottom: 2em;
 		padding: 1.5em;
+		font-size-adjust: 100%;
 	}
 
 		.box > :last-child,
@@ -402,7 +357,7 @@ body, input, select, textarea {
 		.button.big {
 			font-size: 1.2em;
 			font-weight: 500;
-			padding: 0 2.5em 0 2.875em;
+			padding: 0;
 			height: 3.75em;
 			line-height: 3.75em;
 			color: #380744;
@@ -664,7 +619,7 @@ body, input, select, textarea {
 		}
 
 	.select-wrapper:before {
-		color: #89198d;
+		color: #ee63c4;
 	}
 
 	input[type="checkbox"] + label,
@@ -749,20 +704,14 @@ body, input, select, textarea {
 				color: #3c074d;
 			}
 
-		@media screen and (max-width: 736px) {
-
-			.icon.major:before {
-				font-size: 2rem;
-			}
-
-		}
+		
 
 /* Image */
 
 	.image {
 		border-radius: 1px;
 		border: 0;
-		display: inline-block;
+		display: block;
 		position: relative;
 	}
 
@@ -798,38 +747,36 @@ body, input, select, textarea {
 		}
 
 			.image.fit img {
-				width: 100%;
+				width: 10%;
 			}
 
 		.image.main {
 			display: block;
 			margin: 0;
 			width: 100%;
-			border: #480b50 solid 1px;
 		}
 
 			.image.main img {
 				width: auto;
-				height: 100%;
+				height: auto; /* Changed height from 10% to auto */
 			}
 
 			.perfil-container {
 				display: flex;
+				flex-direction: column; /* Alinha os itens em coluna */
 				align-items: center;
 				justify-content: center;
-				margin-top: 15em auto;
-				top: 1em auto;
-				margin-bottom: 1em auto; /* Margem inferior */
+				margin: 2em auto; /* Margem superior e inferior centralizada */
+				padding: 1em; /* Espaçamento interno */
 				text-align: center; /* Centraliza o conteúdo */
-				box-shadow: 0 0 5px 8px rgba(250, 47, 166, 0.644);
-				background-size: cover;
-
+				box-shadow: 0 0 10px 5px rgba(250, 47, 166, 0.644); /* Ajusta a sombra */
+				border-radius: 10px; /* Bordas arredondadas */
+				max-width: 90%; /* Limita a largura máxima */
 			}
-
 			.perfil-img {
 				width: 100%;
 				height: auto;
-				min-width: 200em;
+				min-width: 100%;
 				max-height: 70em;
 				align-items: center;
 				justify-content: center;
@@ -956,38 +903,9 @@ body, input, select, textarea {
 						padding: 0 0 0 0.5em;
 					}
 
-			@media screen and (max-width: 480px) {
-
-				ul.actions {
-					margin: 0 0 2em 0;
-				}
-
-					ul.actions li {
-						padding: 1em 0 0 0;
-						display: block;
-						text-align: center;
-						width: 100%;
+					ul.actions.fit.small li > * {
+						margin-bottom: 0;
 					}
-
-						ul.actions li:first-child {
-							padding-top: 0;
-						}
-
-						ul.actions li > * {
-							width: 100%;
-							margin: 0 !important;
-						}
-
-					ul.actions.small li {
-						padding: 0.5em 0 0 0;
-					}
-
-						ul.actions.small li:first-child {
-							padding-top: 0;
-						}
-
-			}
-
 	dl {
 		margin: 0 2em 2em 0;
 	}
@@ -1005,6 +923,36 @@ body, input, select, textarea {
 	ul.alt li {
 		border-top-color: #d127e0;
 	}
+
+		ul.actions {
+			margin: 0 0 2em 0;
+		}
+
+			ul.actions li {
+				padding: 1em 0 0 0;
+				display: block;
+				text-align: center;
+				width: 100%;
+			}
+
+				ul.actions li:first-child {
+					padding-top: 0;
+				}
+
+				ul.actions li > * {
+					width: 100%;
+					margin: 0 !important;
+				}
+
+			ul.actions.small li {
+				padding: 0.5em 0 0 0;
+			}
+
+				ul.actions.small li:first-child {
+					padding-top: 0;
+				}
+
+	
 
 /* Table */
 
@@ -1119,6 +1067,7 @@ body, input, select, textarea {
 			align-items: center;
 			-moz-justify-content: center;
 			-webkit-justify-content: center;
+			justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
 			background-color: #e0b7dd;
@@ -1153,7 +1102,7 @@ body, input, select, textarea {
 
 			.item header code {
 				background: rgba(73, 10, 75, 0.404);
-				border-color: #704469;
+				border-color: #e973b4;
 			}
 
 			.item header hr {
@@ -1226,73 +1175,24 @@ body, input, select, textarea {
 			width: calc(100% + 80em);
 		}
 
-	@media screen and (max-width: 1080px) {
-
-		.item header {
-			height: 50px;
-		}
-
-		.items {
-			-moz-flex-direction: column;
-			-webkit-flex-direction: column;
-			-ms-flex-direction: column;
-			flex-direction: column;
-			-moz-flex-wrap: nowrap;
-			-webkit-flex-wrap: nowrap;
-			-ms-flex-wrap: nowrap;
-			flex-wrap: nowrap;
-			width: 100%;
-			margin: 0;
-		}
-
-			.items .item {
-				width: 100%;
-				margin: 0 0 0 0;
+			.items .item:nth-child(2n + 1) {
+				background-color: #f3bdf3;
 			}
-
-				.items .item:last-child {
-					margin-bottom: 1px;
-				}
-
-	}
-
-	@media screen and (max-width: 736px) {
-
-		.item header {
-			height: 15em;
-		}
-
-		.items .item {
-			margin: 0 0 1em 0;
-		}
-
-	}
-
-	@media screen and (max-width: 480px) {
-
-		.item {
-			padding: 2em 1em 0.1em 1em;
-		}
-
-			.item header {
-				height: 12em;
-				margin: -2em 0 2em -1em;
-				width: calc(100% + 2em);
-			}
-
-	}
-
 /* Wrapper */
 
 	#wrapper {
-		width: 64em;
-		left: auto;
-		right: auto;
-		top: 0;
-		margin: 0 auto;
-		max-width: calc(100% - 4em);
-		padding: 2em 0 2em 0;
+		width: 100%; /* Garante que o wrapper ocupe toda a largura */
+		max-width: 1200px; /* Define um limite máximo para telas grandes */
+		margin: 0 auto; /* Centraliza o conteúdo */
+		padding: 1em; /* Adiciona espaçamento interno */
+		box-sizing: border-box; /* Inclui padding e bordas no cálculo do tamanho */
 	}
+
+		#wrapper > .main {
+			margin-bottom: 0;
+		}
+
+
 
 /* Header */
 
@@ -1316,15 +1216,18 @@ body, input, select, textarea {
 		-ms-flex-direction: column;
 		flex-direction: column;
 		background-image: url("../../images/banner.png");
-		background-size: cover; /* Ajusta a imagem para cobrir todo o espaço do banner */
+		background-size: contain; /* Ajusta a imagem para cobrir todo o espaço do banner */
 		background-position: center; /* Centraliza a imagem no banner */
 		background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página */
 		height: 100%; /* Ajuste a altura do banner */
 		width: 100%; /* Define largura total */
-		min-height: 400vw; /* Altura mínima */
+		min-height: 400px; /* Altura mínima */
 		text-align: center;
 		position: relative;
 		margin-top: 0; /* Remove espaço acima do banner */
+		padding-top: 0;
+		object-fit: contain;
+	
 	}
 	
 	
@@ -1354,8 +1257,8 @@ body, input, select, textarea {
 		}
 
 		#header code {
-			background: rgba(241, 98, 170, 0.904);
-			border-color: #fd56ef;
+			background: rgba(240, 182, 211, 0.904);
+			border-color: #e494dd;
 		}
 
 		#header hr {
@@ -1368,15 +1271,13 @@ body, input, select, textarea {
 			position: relative; 
 			top: 0; 
 			left: 0; 
-			width: auto;
-			height: auto;
-			min-width: 100%;
-			min-height: 55vw;
-			max-height: 100%;
-			max-width: 100%;
+			width: 100%;
+			height: 100%;
+			min-width: 100vw;
+			min-height: 60vw;
 			background-color: rgba(0, 0, 0, 0);
 			background-image: url("images/overlay.png");
-			padding: 0 auto;
+			padding: 0;
 			box-shadow: 0 0 10px 10px #f75ff2;		}
 
 		#header h1 {
@@ -1398,7 +1299,7 @@ body, input, select, textarea {
 			min-height: 45vw;
 			min-width: none;
 			margin-bottom: 0;
-			box-shadow: 0 0 10px 10px #f75ff2;
+			box-shadow: 0 0 10px 10px #fc74da;
 
 		}
 			
@@ -1416,7 +1317,7 @@ body, input, select, textarea {
 			#header.alt h1 {
 				font-size: 4em;
 				padding: 0 0.5em 0.25em 0.5em;
-				border-bottom: solid 2px #e933bb;
+				border-bottom: solid 2px #e65cc3;
 				font-weight: 200;
 				font-family: "Pacifico", cursive;
 				text-transform: none;
@@ -1447,157 +1348,138 @@ body, input, select, textarea {
 			opacity: 0;
 		}
 
-		@media screen and (max-width: 1280px) {
-
-			#header {
-				background-attachment: scroll;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#header {
-				padding: 8em 2em 5em 5em;
-			}
-
-				#header.alt h1 {
-					font-size: 2.5em;
-					padding-left: 7em 5em 25em 5em;
-					padding-right: 0;
-				}
-
-				#header.alt p {
-					padding: 0 1.25em;
-					font-size: 0.5em;
-				}
-
-				#header.alt .inner {
-					max-width: 100%;
-				}
-
-		}
-
+		
 /* Main */
 
 	#main {
 		padding: 0;
-		background-color: #da5543;
+		background-color: #f19bdf;
 		border-radius: 8px;
-		border: solid 1px #f75ff2;
 	}
 
 		#main > header:first-child {
 			text-align: center;
 		}
-
+		
 
 /* Intro DIAMANTE*/
 
-	#intro {
-		margin-top: 1em;
-		padding: 1em;
-		background-color: #f196ed;
-		border-radius: 10px;		
-		text-align: center;
-		font-size: 5px;
-		position: relative;
-		bottom: 250px; /* Adjusted to move the container further up */
-		left: 50%;
-		top: 10%;
-		transform: translateX(-50%);
-	}
+	
+#intro {
+	margin-top: 0;
+	padding: 1em;
+	background-color: #f196ed;
+	border-radius: 10px;		
+	text-align: center;
+	font-size: 5px;
+	position: relative;
+	bottom: 250px; /* Adjusted to move the container further up */
+	left: 50%;
+	top: 10%;
+	transform: translateX(-50%);
+}
 
-	#intro video {
-		margin: 20px 80px; /* Adiciona espaçamento acima e abaixo de cada vídeo */
-		width: auto; /* Garante que os vídeos ocupem a largura total do recipiente */
-		height: auto;	
-		max-width: 410px; /* Sets a maximum width for videos */
-		max-height: 400px; /* Sets a maximum height for videos */
-		border-radius: 7px; /* Adiciona cantos arredondados aos vídeos */
-		box-shadow: 10px 14px 14px rgba(97, 14, 100, 0.753); /* Adds a subtle shadow for better visibility */
-	}
 
-		@media screen and (max-width: 480px) {
+#intro h2 {
+	font-size: 15pt;
+	color: #570c4d;
+	margin: 1.5em 0;
+	text-transform: uppercase;
+	
+}
+#intro p {
+	font-size: 1.5em;
+	color: #570c4d;
+	margin: 0.5em 0;
+	text-align: center; /* Centraliza o texto */
+	line-height: 1.5; /* Melhora a legibilidade */
+}
+#video-play {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 1em;
+	background-color: #f196ed;
+	border-radius: 10px;		
+	text-align: center;
+	font-size: 5px;
+	position: relative;
+	bottom: 250px; /* Adjusted to move the container further up */
+	left: 50%;
+	top: 10%;
+	transform: translateX(-50%);
+	z-index: auto;
+}
 
-			#intro {
-				padding: 0;
-				bottom: 10px; /* Ajustado para ecrãs mais pequenos*/
-				border: #420949 solid 1px;
-				border-radius: 4px;
-			}
+.video-grid {
+	display: flex; /* Flexbox for alignment */
+	justify-content: space-around; /* Ensures equal spacing between cards */
+	align-items: flex-start; /* Aligns cards at the top */
+	gap: 1em; /* Adds spacing between cards */
+	padding: 0;
+margin-top: 0;
+}
 
-		}
+.video-card {
+	margin-top: 0;
+	margin-bottom: 0;
+	width: 30%; /* Ensures three cards fit side by side */
+	max-width: 200px;
+	background-color: #ebb0e3;
+	border-radius: 10px;
+	box-shadow: 0 14px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better visibility */
+	overflow: hidden;
+	transition: transform 0.3s, box-shadow 0.3s;
+	z-index: auto;
+}
 
-		@media screen and (max-width: 736px) {
+.video-card:hover {
+	transform: translateY(-10px); /* Increased hover effect */
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
 
-			#intro {
-				padding: 0;
-				bottom: 0px; /* Adjusted for even smaller screens */
-			}
-
-				#intro p br {
-					display: none;
-				}
-
-		}
-
+.video-card video {
+	width: 100%;
+	height: auto; /* Maintains aspect ratio */
+	pointer-events: auto;
+	object-fit: cover;
+	border-radius: 10px 10px 0 0;
+	border: #fc67d9f1 solid 2px;
+	z-index: 1;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Softer shadow for video */
+}
+		
 /* CTA ULTIMAS INFORMAÇÕES */
 
 	#cta {
-		padding: auto;
+		padding: 0;
 		text-align: center;
-		font-size: 14px;
-		margin-top: 7em;
-		margin-bottom: 1em;
+		font-size: 14pt;
+		margin-top: 0;
+		margin-bottom: 2em;
+		
 	}
+	#cta .main {
+		padding: 0;
+		border-radius: 5px;
+		
+		margin-top: 0;
+		margin-bottom: 2em;
+		text-align: center;
+		
+	}
+ /*teste menu*/
 
-		@media screen and (max-width: 736px) {
-
-			#cta {
-				padding: 0em 2em 0.1em 2em;
-			}
-
-		}
-
-		@media screen and (max-width: 480px) {
-
-			#cta {
-				padding: 1em 1em 0.1em 1em;
-				font-size: 1.5em;
-			}
-
-				#cta p br {
-					display: none;
-					font-size: 15px;
-				}
-				#cta p {
-					font-size: 17px;
-				}
-				#cta a {
-					font-size: 5em;
-					color: #3b0947;
-					text-decoration: none;
-					
-				}
-				#cta a:hover {
-					text-decoration: underline;
-				}
-
-		}
+ 
+ /*fim teste menu*/
+		
 
 /* Footer */
 
 	#footer {
 		text-align: center;
-		margin-top: 10em;
+		margin-top: 1em; /*movimentar para verticalmente os conteúdos*/
 		font-size: 15px;
 	}
-
-		#footer a {
-			color: #7a146d;
-			font-size: 1.5em;
-		}
 
 		#footer:before {
 			content: '';
@@ -1605,56 +1487,123 @@ body, input, select, textarea {
 			width: 70em;
 			height: 2px;
 			background-color: #530d48;
-			margin-bottom: 4em;
+			margin-bottom: 1em;
 		}
 
 		#footer .copyright {
-			font-size: 17px;
+			font-size: 15pt;
 		}
+				/*teste redes sociais*/
 
-		@media screen and (max-width: 736px) {
-
-			#footer {
-				margin-top: 1em;
-			}
-
-				#footer:before {
-					margin-bottom: 5px;
+				.me {
+					display: block;
+					margin: 2em auto; /* Centraliza o elemento */
+					padding: 1em;
+					margin-bottom: -2em;
+					width: 250px;
+					height: 2;
+					border-radius: 50%;
+					position: relative;
+					z-index: 1;
+				}
+				.social {
+					display: flex; /* Garante que os ícones sejam alinhados em linha */
+					justify-content: center; /* Centraliza os ícones horizontalmente */
+					align-items: center; /* Alinha os ícones verticalmente */
+					gap: 2em; /* Reduz o espaçamento uniforme entre os ícones */
+					font-size: 2.0em; /* Tamanho dos ícones */
+					margin-bottom: 2em;
+				}.social a {
+					color: inherit; /* Garante que a cor seja herdada */
+					text-decoration: none; /* Remove sublinhado dos links */
+				}
+				
+				.social i {
+					margin: 0; /* Remove margens inconsistentes */
+					padding: 0; /* Remove preenchimentos inconsistentes */
+					color: #555; /* Cor padrão dos ícones */
+					cursor: pointer; /* Mostra o cursor de ponteiro ao passar sobre os ícones */
+					transition: transform 0.3s ease, color 0.3s ease; /* Adiciona transições suaves */
+				}
+				
+				.social i:hover {
+					transform: scale(1.1); /* Aumenta ligeiramente o ícone ao passar o mouse */
+				}
+				
+				#facebook:hover {
+					color: #3b5998;
+				}
+				
+				#github:hover {
+					color: black;
+				}
+				
+				#linkedin:hover {
+					color: #0177B5;
+				}
+				
+				#instagram {
+					margin: 0; /* Remove margens específicas */
+					padding: 0; /* Remove preenchimentos específicos */
+					color: #555; /* Define a cor padrão */
+				}
+				#instagram:hover {
+					color: #e42aac;
 				}
 
-		}
+				#mail:hover {
+					color: #D44638;
+				}
+				
+				#whatsapp:hover {
+					color: #25D366;
+				}
+				
+				
+		
 		/*Menu sidebar*/
 
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
 		
-		body {
+		#menu-container .body {
 			font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 			background-color: #f8ece5;
 		}
 		
-		header {
-			background-color: #570c4d;
+		#menu-container .header {
+			background-color: #ff9fdada;
 			color: #fff;
 			text-align: center;
-			padding: 20px;
-		}
-		
-		.menu-container {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			gap: 20px;
-			padding: 1px;
+			padding: 2px;
+			margin-bottom: 0;
 			margin-top: 0;
+		}
+#card {
+		margin-top: 2.5em;
+		padding: 1em;
+		background-color: #f196ed;
+		border-radius: 10px;		
+		text-align: center;
+		font-size: 5px;
+		position: relative;
+		bottom: 260px; /* Adjusted to move the container further up */
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	
+		.menu-container {
+		display: flex; /* Flexbox for alignment */
+		justify-content: space-around; /* Ensures equal spacing between cards */
+		align-items: flex-start; /* Aligns cards at the top */
+		gap: 1em; /* Adds spacing between cards */
+		padding: 0;
+		margin-bottom: 0;
+		bottom: 0;
 		}
 		/*quadros*/
 		.menu-card {
-			margin-top: 1;
-			width: 100%;
-			max-width: 300px;
+			margin-top: 1em;
+			width: 30%;
+			max-width: 240px;
 			left: auto;
 			background-color: #ebb0e3;
 			border-radius: 10px;
@@ -1670,10 +1619,10 @@ body, input, select, textarea {
 		.menu-card img, 
 		.menu-card video {
 			width: 100%;
-			height: 300px;
+			height: 280px;
 			object-fit: cover;
 			border-radius: 10px 10px 0 0;
-			border: #6d165991 solid 2px;
+			border: #fc67d9f1 solid 2px;
 			box-shadow: 0 2px 8px rgba(121, 11, 93, 0.671);
 
 			opacity: 0.9;
@@ -1721,37 +1670,99 @@ body, input, select, textarea {
 			
 		}
 
-@media screen and (max-width: 736px) {
-    body {
-        font-size: 12pt; /* Reduz o tamanho da fonte */
-        padding: 0;
-    }
+		/* Continue para os outros ícones */
+		/* Continue para os outros ícones */
+		/*fim do teste*/
 
-    #header {
-        padding: 5em 1em; /* Ajusta o espaçamento interno */
-        min-height: 30vw; /* Reduz a altura mínima do banner */
-    }
 
-    .menu-container {
-        grid-template-columns: 1fr; /* Exibe os itens em uma única coluna */
-        gap: 10px;
-    }
+		/* Ajustes de Design Responsivo */
 
-    .menu-card {
-        max-width: 100%; /* Garante que os cartões ocupem toda a largura */
-    }
+		/* Ajustes gerais para telas menores */
+		@media (max-width: 768px) {
+			body {
+				font-size: 10pt;
+				padding: 0;
+				margin-top: 0;
+				object-fit: cover;
+			}
 
-    .menu-card img, .menu-card video {
-        height: auto; /* Ajusta a altura automaticamente */
-    }
+			h1, h2, h4, h5, h6 {
+				margin: 2em 1em 1em 1em;
+				font-size-adjust: 50%;
+				font-weight: normal;
 
-    #intro {
-        padding: 1em;
-        bottom: 0; /* Ajusta a posição */
-    }
+			}
+			h3 {
+				margin: 1em 1em 1em 1em;
+				font-size-adjust: 50%;
+				font-weight: normal;
+			}
 
-    #cta {
-        font-size: 1em; /* Reduz o tamanho da fonte */
-        margin-top: 2em;
-    }
-}
+			#header {
+				background-attachment: scroll; /* Desative o fundo fixo para um melhor desempenho */
+				min-height: 300px;
+			}
+
+			#intro, #video-play, #card {
+				padding: 1px;
+				bottom: 0;
+				left: 0;
+				transform: none;
+				margin: 1em auto;
+			}
+
+			.video-grid, .menu-container {
+				flex-direction: row;/* Empilhar itens verticalmente */
+				align-items: center;
+			}
+
+			.video-card, .menu-card {
+				width: 40%; /* Largura total para telas menores */
+				max-width: 40em;
+			}
+
+			.menu-card img, .menu-card video {
+				height: auto; /* Ajuste a altura para telas menores */
+			}
+
+			.menu-content h2 {
+				font-size: 16px;
+			}
+
+			.menu-content p {
+				font-size: 12px;
+			}
+
+			.button {
+				font-size: 0.6em;
+				padding: 0.5em 1em;
+			}
+		}
+
+		/* Telas extra pequenas */
+		@media (max-width: 480px) {
+			h1, h2, h3, h4, h5, h6 {
+				font-size-adjust: 80%;
+			}
+
+			#header {
+				min-height: 200px;
+			}
+
+			.video-card, .menu-card {
+				width: 100%;
+			}
+
+			.menu-content h2 {
+				font-size: 14px;
+			}
+
+			.menu-content p {
+				font-size: 10px;
+			}
+
+			.button {
+				font-size: 0.5em;
+				padding: 0.4em 0.8em;
+			}
+		}

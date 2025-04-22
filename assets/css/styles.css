@@ -1,24 +1,29 @@
-* {
+/** {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+}*/
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  max-width: 500px;
 }
 
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-body {
+body.carousel-body {
   background-color: rgb(235, 111, 218)
 }
 
-header {
+header.carousel-header {
+  width: 100%;
+  height: auto;
+  padding: 2%;
+  margin: auto;
+  background-color: rgba(235, 124, 207, 0.986);
 	width: 100%;
-	height: 120px;
-
-	background-color: rgba(235, 124, 207, 0.986);
+	height: auto;
 	color: rgb(235, 110, 183);
   border-bottom: 5px solid rgba(66, 7, 133, 0.384);
 
@@ -67,13 +72,12 @@ header p {
   max-width: 480px;
   position: relative;
   margin: auto;
-  margin-top: 2%;
+  bottom: 200px;
   border: #c343c7 solid 2px;
   box-shadow: 8px 0 10px rgba(126, 21, 126, 0.5);
   border-radius: 1px;
-  padding-top: auto;
-  padding-bottom: auto;
   transition: box-shadow 0.3s ease;
+  object-fit: cover;
 
 
   transition: padding 0.3s ease;
@@ -125,6 +129,10 @@ span {
   .carousel-item {
     transition: none;
   }
+  #carousel .carousel-item {
+    transition-duration: 0s;
+    max-width: fit-content;
+  }
 }
 
 .carousel-item.active,
@@ -161,7 +169,7 @@ span {
 
 .carousel-fade .active.carousel-item-left,
 .carousel-fade .active.carousel-item-right {
-  z-index: 0;
+  z-index: 1;
   opacity: 0;
   transition: opacity 0s 0.6s;
 }
@@ -233,23 +241,22 @@ span {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l4 4-4 4-1.5-1.5L3.75 4 .25 1.5 2.75 0z'/%3e%3c/svg%3e");
 }
 
-.carousel-indicators {
+#carousel .carousel-indicators {
   position: absolute;
   right: 0;
-  bottom: 0%;
   left: 0;
-  z-index: 15;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
   justify-content: center;
   padding-left: 0;
-  margin-right: 15%;
+  margin-right: 10%;
   margin-left: 15%;
   list-style: none;
+  z-index: 1;
 }
 
-.carousel-indicators li {
+#carousel .carousel-indicators li {
   box-sizing: content-box;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -258,7 +265,7 @@ span {
   border-radius: 50%;
   margin-right: 3px;
   margin-left: 3px;
-  margin-top: 80em;
+  margin-top: 20em;
   /*text-indent: -999px;*/
   cursor: pointer;
   background-color: #2e0e52;
@@ -268,12 +275,9 @@ span {
   opacity: 0.5;
 }
 
-.carousel-indicators .active {
-  opacity: 1;
-}
 
 .carousel-indicators li {
-  margin-top: 80em;
+  margin-top: 10em;
 }
 
 .carousel-indicators .active {
@@ -285,7 +289,7 @@ span {
   right: 15%;
   bottom: 20px;
   left: 15%;
-  z-index: 10;
+  z-index: auto;
   padding-top: 20px;
   padding-bottom: 20px;
   color: #991e74;
@@ -327,4 +331,27 @@ span {
   left: 0;
   color: rgba(255,255,255,1);
   text-shadow: 1px 2px 3px rgba(0,0,0,1);
+}
+
+@media (max-width: 720px) {
+  #carousel,
+  .carousel,
+  .slide {
+    max-width: 80%; /* Ajusta a largura para caber na tela */
+    max-height: 300px; /* Define uma altura máxima */
+    height: auto; /* Permite que a altura seja ajustada proporcionalmente */
+  }
+
+  .carousel-item img {
+    max-height: 300px; /* Limita a altura das imagens */
+    object-fit: cover; /* Garante que as imagens sejam ajustadas sem distorção */
+  }
+  #carousel .carousel-indicators {
+    margin-top: 0; /* Remove a margem superior */
+    margin-bottom: 0; /* Remove a margem inferior */
+  }
+  .carousel-indicators li {
+    margin-top: 0; /* Remove a margem superior */
+    margin-bottom: 0; /* Remove a margem inferior */
+  }
 }

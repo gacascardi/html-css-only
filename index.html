@@ -6,78 +6,92 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="stylesheet" href="assets/css/styles.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="./assets/js/bootstrap.js"> </script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/custom.js"></script> <!-- Added custom.js for additional scripts -->
+	
 
 
 	<title>Mimos da Dany</title>
 </head>
-	<body>
+	<div>
 
 			<header id="header" class="alt">
 			</header>
-
-			<div id="to-animate"></div> <!-- Added animation container -->
-
 						<!-- Banner -->
 					<div id="intro" class="main">
 						<div class="perfil-container">
 							<img src="images/about.png" alt="Perfil da Dany" class="perfil-img">
-						</div>
+					
 						<p><h2>Olá, meu nome é Danúbia, sou confeiteira e faço doces personalizados para festas e eventos.</h2></p>
-							 <p><h2>Sou de Ribeirão Preto e amo o que eu faço. E sei que tudo o que é feito com amor, tem mais sabor.</h2></p>
-							 <p><h2>Meus produtos são feitos com ingredientes de qualidade e com muito carinho.</h2></p>
-							 <p><h2>Se você quer fazer uma festa ou evento, entre em contato comigo e faça seu pedido.</h2></p>
-
-							<video width="400px" height="340px" muted loop autoplay>
+							 <p><h2>Sou de Ribeirão Preto e amo o que eu faço e sei que tudo o que é feito com amor, tem mais sabor.</h2></p>
+						</div>
+					</div>
+					<section id="video-play" class="video-container">
+						<div class="video-grid">
+							<div class="video-card">
+							<video width="300px" height="240px" muted loop>
 								<source src="assets/css/videos/video-cinco.mp4" type="video/mp4">
 							</video>						
-
-							<video width="400px" height="340px" muted loop autoplay>
+							</div>
+							<div class="video-card">
+							<video width="300px" height="240px" muted loop>
 								<source src="assets/css/videos/video-sete.mp4" type="video/mp4">
 							</video>
+							</div>
+							<div class="video-card">
+								<video width="300px" height="240px" muted loop>
+									<source src="assets/css/videos/video-dois.mp4" type="video/mp4">
+								</video>
+							</div>
+						</div>
+					
 					</section>
-					</div> <!-- Fim do banner -->
-
+					
+				 <!-- Fim do banner -->
+			
 				<!-- Items -->
-<div class="menu-container">
+  <section id="card" class="menu-container">
 			<div class="menu-card">
-			<video width="320px" height="240px" muted autoplay loop>
+			<video width="320px" height="240px" muted loop>
 				<source src="assets/css/videos/video-pascoa.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>
       <div class="menu-content">
-        <h3>Ovos Gourmet</h3>
+        <h2>Ovos Gourmet</h2>
         <p>Ovos de colher, Trufado, Mini Ovos para deixar sua Páscoa mais doce.</p>
         <a href="#cta">Chama a Dany!</a>
       </div>
     </div>
+
 		<div class="menu-card">
-			<video width="320" height="240" muted autoplay loop>
+			<video width="320" height="240" muted loop>
 				<source src="assets/css/videos/video-um.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>      
 			<div class="menu-content">
-        <h3>Docinhos</h3>
+        <h2>Docinhos</h2>
         <p>Sua festa com o sabor que você escolher, da forma que quiser.</p>
         <a href="#cta">Chama a Dany!</a>
       </div>
     </div>
 
     <div class="menu-card">
-			<video width="320" height="240" muted autoplay loop>
+			<video width="320" height="240" muted loop>
 				<source src="assets/css/videos/video-tres.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>      
 			<div class="menu-content">
-        <h3>Bolos</h3>
+        <h2>Bolos</h2>
         <p>Personalizados do seu jeito, com a sua cara e com os mais variados sabores.</p>
         <a href="#cta">Chama a Dany!</a>
       </div>
     </div>
-  </div>
-	
+  </section>
+		 <!-- Fim do main -->
+
 <!--Carrossel usando Bootstrap versão 4
 Para alterar a velocidade de transição entre as imagens, procure no CSS transition-duration: 1.5s, que está definido para 1,5 segundos por padrão.
 
@@ -87,6 +101,8 @@ Para alterar o tempo que uma imagem fica na tela, procure no Javasript var Defau
 
 Para parar o carrossel é com hover do mouse.-->
 
+<body class="carousel-body">
+	
 <div id="carousel" class="carousel slide" data-ride="carousel">
 
 	<!--   Bullets do carrossel, se aumentar uma imagem, aumente um li e acrescento o próximo número -->
@@ -201,11 +217,11 @@ Para parar o carrossel é com hover do mouse.-->
 		</a> 
 </div> <!-- Fim do carrossel -->
 	
-
+</body>
   <script src="script.js"></script>
 				
 				<!-- CTA -->
-					<section id="cta" class="main special">
+					<section id="cta" class="main">
 						<h5>Clique abaixo em faça seu pedido!</h5>
 						<p>Mais informações, preços e disponibilidade, entre em contato.</p>
 						<ul class="actions">
@@ -216,17 +232,33 @@ Para parar o carrossel é com hover do mouse.-->
 							<li><a href="https://www.instagram.com/danycholas/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 						</ul>
 					</section>
+					<!-- Fim do CTA -->
+					 <!--teste menu-->
+					 
+					<!--fim teste menu-->
+
+					<!--teste redes sociais-->
+							<!-- Footer -->
+				
 					<footer id="footer">
-						<p>Desenvolvido por:</p>
-						<p class class="copyright">&copy;2025 GrazzArte. Todos os direitos reservados.</p>
-						<a href="https://www.instagram.com/grazzarte/" class="icon fa-instagram"><span class="label">GrazzArte</span></a>
-						<a href="https://github.com/gacascardi" class="icon fa fa-github"><span class="label">GrazzArte</span></a>
-            </p>
+				  <p>Desenvolvido por:</p>
+					<img class="me" src="images/star_background.png" alt="" />
+					<div class="social">
+  					<a href="https://github.com/gacascardi"><i id="github" class="fab fa-github"></i></a>
+  					<a href="https://www.instagram.com/grazzarte/"><i id="instagram" class="fab fa-instagram"></i></a>
+						<a href="https://www.linkedin.com/gacascardi"><i id="linkedin" class="fab fa-linkedin"></i></a>
+  					<a href="https://wa.me/qr/7CRIC7XTHWVDK1"><i id="whatsapp" class="fab fa-whatsapp"></i></a>
+  					<a href="mailto:gacaascardi@outlook.com"><i id="mail" class="fas fa-envelope"></i></a>						
+					</div>
+						<p class="copyright">&copy;2025 GrazzArte. Todos os direitos reservados.</p>
 						<p>🚧Esse é o meu primeiro site e está em fase de testes como parte do meu aprendizado em Desenvolvimento WEB durante o curso de GTI🚧</p>
-					</footer>
+						</footer>
+					
+					<!-- Fim do Footer -->
+					<!-- Animação -->
 			</div>
 			<script>
-
+				
 				// Animation code
 				let animation = bodymovin.loadAnimation({
 					container: document.getElementById('to-animate'),
